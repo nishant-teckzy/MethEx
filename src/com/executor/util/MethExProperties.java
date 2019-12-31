@@ -37,9 +37,9 @@ public class MethExProperties {
 				if (!isLoaded) {
 					props = new Properties();
 					input = this.getClass().getResourceAsStream("/methex.properties");//new FileInputStream(installationLoc + "/" + platform);
-					if ("null".equals(input)) {
+					if (null == input) {
 						throw new IllegalStateException("Either Property file " + platform
-								+ " is missing. It must be at path " + installationLoc);
+								+ " is missing. It must be in some Resource/Source package");
 					}
 					props.load(input);
 					isLoaded = true;
